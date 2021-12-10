@@ -32,7 +32,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Simple route.
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome to ella & arthur application." });
+    res.json({ message: "Welcome to qihui & arthur application." });
 });
 
 // Set port, listen for request.
