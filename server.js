@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser"); // Parse the request and create the req.body object.
 const cors = require("cors"); // Provides Express middleware to enable CORS with various options.
-const db = require("./app/models")
+const db = require("./app/models");
 
 const app = express();
 
@@ -11,7 +11,7 @@ db.mongoose
         useNewUrlParser: true,
         useUnifiedTopology: true
     }).then(() => {
-        console.log("Connected to the database.");
+        console.log("Connected to the database successfully.");
     }).catch(err => {
         console.log("Cannot connect to the database. \n", err);
         process.exit();
@@ -34,6 +34,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to arthur & ella application." });
 });
+
+require("./app/routes/user.routes")(app);
 
 // Set port, listen for request.
 const PORT = process.env.PORT || 8080;
