@@ -18,10 +18,11 @@ db.mongoose
     });
 
 var corsOptions = {
-    origin: "http://localhost:8081"
+    origin: "http://localhost:3000"
 };
 
 app.use(cors(corsOptions));
+
 
 // Parse requests of content-type - application/json.
 // Present and transforms the text-based JSON input into JS-accessible variables under req.body.

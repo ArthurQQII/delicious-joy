@@ -75,7 +75,7 @@ exports.update = (req, res) => {
                 message: "Error updating User with id=" + id
             });
         });
-};sss
+};
 
 // Delete a user with the specified id in the request
 exports.delete = (req, res) => {
