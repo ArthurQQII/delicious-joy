@@ -32,7 +32,7 @@ exports.create = (req, res) => {
 
 // Retrieve all users from the database.
 exports.findAll = (req, res) => {
-
+    console.log("\nsdfsdf\n")
 };
 
 // Find a single user with an id.

@@ -41,7 +41,7 @@ var bcrypt = require("bcryptjs");
 // };
 
 exports.signin = (req, res) => {
-  console.log("\nsdfsdf\n")
+
   User.findOne({
     where: {
       email: req.body.email
@@ -52,6 +52,7 @@ exports.signin = (req, res) => {
         return res.status(404).send({ message: "User Not found." });
       }
 
+      console.log(user)
       var passwordIsValid = bcrypt.compareSync(
         req.body.password,
         user.password
