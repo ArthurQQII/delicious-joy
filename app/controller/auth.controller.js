@@ -5,11 +5,11 @@ const User = db.user;
 
 // const Op = db.Sequelize.Op;
 
-var jwt = require("jsonwebtoken");
+var jwt = require("jsonwebtoken"); 
 var bcrypt = require("bcryptjs");
 
+ // Save User to Database
 exports.signup = async (req, res) => {
-  // Save User to Database
   const formData = req.body;
   if (!formData.email || !formData.password) {
     return res.status(400).send({ error: "Data not formatted properly" });
@@ -17,7 +17,6 @@ exports.signup = async (req, res) => {
   const newUser = new User(formData);
   const salt = await bcrypt.genSalt(10);
   newUser.password = await bcrypt.hash(newUser.password, salt);
-  console.log("\n\nsss\n");
   newUser.save().then((doc) => res.status(201).send(doc));
 };
 

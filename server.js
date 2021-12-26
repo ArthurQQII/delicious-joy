@@ -18,7 +18,7 @@ db.mongoose
     });
 
 var corsOptions = {
-    origin: "http://localhost:3000"
+    origin: "http://localhost:3000" // allow request send from this link
 };
 
 app.use(cors(corsOptions));
